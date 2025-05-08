@@ -54,6 +54,8 @@ export function Chat({ thread: threadFromProps }: ChatProps) {
 	const onSubmit = () => {
 		if (!message || message.trim() === '') return;
 
+		setMessages((prev) => [...prev, { role: 'user', content: message }]);
+
 		const m = message;
 		setMessage(''.trim());
 
@@ -79,11 +81,7 @@ export function Chat({ thread: threadFromProps }: ChatProps) {
 				}
 
 				if (data.newMessage) {
-					setMessages((prev) => [
-						...prev,
-						{ role: 'user', content: m },
-						{ role: 'assistant', content: data.newMessage },
-					]);
+					setMessages((prev) => [...prev, { role: 'assistant', content: data.newMessage }]);
 				}
 			}
 		});

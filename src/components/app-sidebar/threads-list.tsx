@@ -25,13 +25,16 @@ export function ThreadsList() {
 	return (
 		<SidebarMenu>
 			{threads.map((thread) => (
-				<SidebarMenuItem key={thread.id}>
+				<SidebarMenuItem
+					className='py-2'
+					key={thread.id}
+				>
 					<SidebarMenuButton asChild>
 						<Link
-							className='text-white hover:text-white'
+							className='text-white hover:text-white py-1'
 							href={`/thread/${thread.id}`}
 						>
-							{thread.title}
+							{thread.title.length > 28 ? thread.title.substring(0, 28).trim() + '...' : thread.title}
 						</Link>
 					</SidebarMenuButton>
 				</SidebarMenuItem>
