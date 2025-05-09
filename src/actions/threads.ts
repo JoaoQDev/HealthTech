@@ -20,7 +20,7 @@ export async function getThreads() {
 
 		const data: Thread[] = await res.json();
 
-		return { threads: data };
+		return { threads: data.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()) };
 	} catch (error) {
 		console.error(error);
 		return { error: 'Algo deu errado' };

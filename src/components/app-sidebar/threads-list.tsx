@@ -26,7 +26,7 @@ export function ThreadsList() {
 		<SidebarMenu>
 			{threads.map((thread) => (
 				<SidebarMenuItem
-					className='py-2'
+					className='py-1'
 					key={thread.id}
 				>
 					<SidebarMenuButton asChild>
