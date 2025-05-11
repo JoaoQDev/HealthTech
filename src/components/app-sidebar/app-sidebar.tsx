@@ -20,7 +20,6 @@ import { ThreadsList } from './threads-list';
 import { signOut, useSession } from 'next-auth/react';
 import { LogOut, MessageSquare } from 'lucide-react';
 
-const TEXT_COLOR = '#ABB2BD';
 const SIDEBAR_BG_COLOR = '#212327';
 
 export function AppSidebar() {
@@ -35,9 +34,9 @@ export function AppSidebar() {
 			{isMobile && <SidebarTrigger className='cursor-pointer' />}
 			<Sidebar
 				collapsible='icon'
-				className={`text-[${TEXT_COLOR}]`}
+				className="text-[#ABB2BD]"
 			>
-				<SidebarHeader className={`bg-[${SIDEBAR_BG_COLOR}] p-4 group-data-[collapsible=icon]:hidden`}>
+				<SidebarHeader className="bg-[#212327] p-4 group-data-[collapsible=icon]:hidden">
 					<div className='flex justify-between items-center pb-4'>
 						<Image
 							src={'/logo.png'}
